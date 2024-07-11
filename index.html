@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Галерея</h1>
+      <img src="assets/images/cat1.jpg" width="300px" alt="" />
+      <img src="assets/images/cat2.jpg" width="300px" alt="" />
+      <button>Назад</button>
+      <button>Вперед</button>
+    </section>
+    <script>
+      function яПрограммирую() {
+        console.log("Я программирую на Java Script");
+      }
+      яПрограммирую();
+      const images = document.querySelectorAll("img");
+      const buttons = document.querySelectorAll("button");
+      let currentImage = 0;
+      images[1].style.display = "none";
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          images[currentImage].style.display = "none";
+          currentImage = (currentImage + 1) % 2;
+          images[currentImage].style.display = "block";
+        });
+      });
+    </script>
+  </body>
+</html>
